@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (3.4.0)
+  - DGElasticPullToRefresh (1.0.3)
+  - Kingfisher (2.4.1)
+  - SlideMenuControllerSwift (2.1.1)
+  - SQLite.swift (0.10.1)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - DGElasticPullToRefresh
+  - Kingfisher
+  - SlideMenuControllerSwift
+  - SQLite.swift (~> 0.10.1)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  DGElasticPullToRefresh: 040f39ae69840b3261d163fe6735c5901bf851e9
+  Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
+  SlideMenuControllerSwift: 82ada9b04e03538c84d034cf1c09e5849c0113f7
+  SQLite.swift: 6a6e4b034efc317ce4e203b6af2d3024fee2b570
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0

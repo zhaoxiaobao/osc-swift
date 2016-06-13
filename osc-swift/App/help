@@ -1,0 +1,159 @@
+1.swift Dictionary 字典
+//(1)创建一个字典
+
+var dic:Dictionary<String,String>=["三国演义":"罗贯中","水浒传":"施耐庵","红楼梦":"曹雪芹","西游记":"吴承恩"];
+
+println(dic);
+
+//执行结果:[三国演义: 罗贯中, 水浒传: 施耐庵, 红楼梦: 曹雪芹, 西游记: 吴承恩]
+
+
+//(2)访问字典
+
+var name=dic["三国演义"];
+
+println(name);
+
+//执行结果：罗贯中
+
+//(3)向字典中添加键值
+
+var student:Dictionary<String,Int> = ["小明":10001,"小华":10002,"小红":10003];  // 声明一个学生字典  键: 姓名  值:学号
+
+//添加
+
+student["理想"]=10004;
+
+println(student);
+
+//执行结果:[小华: 10002, 小红: 10003, 小明: 10001, 理想: 10004]
+
+
+/修改
+
+student.updateValue(12345,forKey:"理想");  // 将理想的学号改为12345  updateValue() 这个方法返回更新值之前的原值。这样方便我们检查更新是否成功
+
+println(student);
+
+//执行结果：[小华: 10002, 小红: 10003, 小明: 10001, 理想: 12345]
+
+
+//删除
+
+student.removeValueForKey("理想"); //将理想 删除
+
+println(student);
+
+//执行结果:[小华: 10002, 小红: 10003, 小明: 10001]
+
+
+//获得键对应的值
+
+let value = student["小明"]; //将理想 删除
+
+println("小明 的 value 为 \(value)");
+
+//执行结果: 小明 的 value 为 10001
+
+
+//(4)遍历  for in 字典  会以元组(键，值)的形式返回
+
+for (key,value) in student  //无序
+
+{
+
+println("键:\(key) 值:\(value)");
+
+}
+
+
+//执行结果:
+
+/*
+
+键:小华 值:10002
+
+键:小红 值:10003
+
+键:小明 值:10001
+
+*/
+
+//或者
+
+for tuples in student  //无序
+
+{
+
+println("键:\(tuples.0) 值:\(tuples.1)");
+
+}
+
+//我们也可以通过访问他的keys或者values属性（都是可遍历集合）检索一个字典的键或者值
+
+
+for key in student.keys
+
+{
+
+println("key=:\(key)");
+
+}
+
+
+
+
+//(5)通过构造方法创建字典
+
+var namesOfIntegers = Dictionary<Int, String>()
+
+
+
+
+
+
+//(6)字典类型的赋值和拷贝行为
+
+/*
+
+注意：字典和数组的拷贝是不同的
+
+1.无论何时将一个字典实例赋给一个常量或变量，或者传递给一个函数或方法，这个字典会即会在赋值或调用发生时被拷贝。
+
+2.如果字典实例中所储存的键(keys)和/或值(values)是值类型(结构体或枚举)，当赋值或调用发生时，它们都会被拷贝。相反，如果键(keys)和/或值(values)是引用类型，被拷贝的将会是引用，而不是被它们引用的类实例或函数
+
+
+*/
+
+
+var student2=student;  // 字典赋值
+
+println("  student 为:\(student)\n student2 为:\(student2) ");
+
+/*
+
+执行结果:
+
+student  为:[小华: 10002, 小红: 10003, 小明: 10001]
+
+student2 为:[小华: 10002, 小红: 10003, 小明: 10001]
+
+*/
+
+student.updateValue(12345,forKey:"小明"); // 改变 student 中 小明的 value  student2不会改变
+
+println("  student 为:\(student)\n student2 为:\(student2) ");
+
+/*
+
+执行结果：
+
+student 为: [小华: 10002, 小红: 10003, 小明: 12345]
+
+student2 为:[小华: 10002, 小红: 10003, 小明: 10001]
+
+
+*/
+
+
+
